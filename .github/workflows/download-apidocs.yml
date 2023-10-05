@@ -1,0 +1,32 @@
+name: Download API Docs from Backend Repository
+
+on:
+  push:
+    branches:
+      - "master"  # 원하는 브랜치로 변경
+  workflow_dispatch:  # manual로 실행하기 위한 설정
+    inputs:
+      manual_run:
+        description: 'Run manually'
+        default: 'false'
+
+jobs:
+  download-api-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # 현재 레포지토리의 코드를 체크아웃합니다.
+
+    - name: Download API Docs
+      run: |
+        # API 문서를 다운로드하고 현재 레포지토리에 저장합니다.
+        curl -o api-docs.yml -L "https://raw.githubusercontent.com/manito42/backend/develop/api-docs.yml"
+
+    - name: Commit and Push Changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add api-docs.yml
+        git commit -m "Add API docs from external repository"
+        git push
