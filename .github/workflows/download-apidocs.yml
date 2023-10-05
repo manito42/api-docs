@@ -1,9 +1,6 @@
 name: Download API Docs from Backend Repository
 
 on:
-  push:
-    branches:
-      - "master"  # 원하는 브랜치로 변경
   workflow_dispatch:  # manual로 실행하기 위한 설정
     inputs:
       manual_run:
