@@ -1,3 +1,9 @@
+# Manito42 API DOCS
+
+[api 주소](https://manito42.github.io/api-docs/)
+
+
+
 # How to host Swagger API documentation with GitHub Pages
 [<img alt="The blog of Peter Evans: How to Host Swagger Documentation With Github Pages" title="View blog post" src="https://peterevans.dev/img/blog-published-badge.svg">](https://peterevans.dev/posts/how-to-host-swagger-docs-with-github-pages/)
 
